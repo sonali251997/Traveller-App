@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -14,11 +14,24 @@ const schema = Yup.object().shape({
 });
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <Formik
       validationSchema={schema}
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => {}}
+      onSubmit={(values, { setSubmitting }) => {
+        const loggedUser = JSON.parse(localStorage.getItem("user"));
+        console.log("log", loggedUser.email);
+        if (
+          values.email === loggedUser.email &&
+          values.password === loggedUser.password
+        ) {
+          navigate("UI/Home");
+        } else {
+          alert("wrong email password");
+        }
+        setSubmitting(true);
+      }}
     >
       {({
         values,
@@ -43,11 +56,11 @@ const Login = () => {
                 className="form-control inp_text"
                 id="email"
               />
-              {/* If validation is not passed show errors */}
+
               <p className="error">
                 {errors.email && touched.email && errors.email}
               </p>
-              {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
+
               <input
                 type="password"
                 name="password"
@@ -57,18 +70,18 @@ const Login = () => {
                 placeholder="Enter password"
                 className="form-control"
               />
-              {/* If validation is not passed show errors */}
+
               <p className="error">
                 {errors.password && touched.password && errors.password}
               </p>
-              {/* Click on submit button to submit the form */}
+
               <button type="submit">Login</button>
 
               <p>
-                Don't have an account ?
-                <span className="linkbutton">
-                  <Link to="/Registration">Sign Up</Link>
-                </span>
+                New Here ?
+                <Link className="linkbutton" to="/Registration">
+                  Sign Up
+                </Link>
               </p>
             </form>
           </div>

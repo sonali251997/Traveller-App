@@ -24,7 +24,10 @@ const Registration = () => {
     <Formik
       validationSchema={schema}
       initialValues={{ firstName: "", lastName: "", email: "", password: "" }}
-      onSubmit={(values) => {}}
+      onSubmit={(values, { setSubmitting }) => {
+        localStorage.setItem("user", JSON.stringify(values));
+        setSubmitting(false);
+      }}
     >
       {({
         values,
@@ -99,7 +102,10 @@ const Registration = () => {
 
               <button type="submit">Register</button>
               <p>
-                Already have an account ? <Link to="/Login">Login here</Link>
+                Already have an account ?{" "}
+                <Link className="linkbutton" to="/">
+                  Login here
+                </Link>
               </p>
             </form>
           </div>
