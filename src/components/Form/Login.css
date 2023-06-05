@@ -66,6 +66,12 @@ body {
   display: block;
 }
 
+.form .linkbutton {
+  color: #4b6cb7;
+  font-size: 20px;
+  text-decoration: none;
+}
+
 .form p.error {
   margin: 0 0 10px 10px;
   text-align: left;

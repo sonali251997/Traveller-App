@@ -2,6 +2,7 @@ import React from "react";
 import "./Login.css";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { Link, Navigate } from "react-router-dom";
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -62,6 +63,13 @@ const Login = () => {
               </p>
               {/* Click on submit button to submit the form */}
               <button type="submit">Login</button>
+
+              <p>
+                Don't have an account ?
+                <span className="linkbutton">
+                  <Link to="/Registration">Sign Up</Link>
+                </span>
+              </p>
             </form>
           </div>
         </div>
