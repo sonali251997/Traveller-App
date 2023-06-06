@@ -5,12 +5,11 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./components/store/index";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-  <App />
-</Provider>
+    <App />
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
