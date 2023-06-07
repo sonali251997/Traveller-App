@@ -1,29 +1,35 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../store/counter-slice";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => {
-    console.log(state, "check state");
-    return state?.counter;
-  });
+  const countQuantity = useSelector((state) => state.count.count);
 
   const incrementHandler = () => {
-    dispatch({ type: "increment" });
+    dispatch(uiActions.increment());
   };
 
   const decrementHandler = () => {
-    dispatch({ type: " decrement " });
+    dispatch(uiActions.decrement());
+  };
+  const IncrementHandlerByFive = () => {
+    dispatch(uiActions.incrementByAmount(5));
+  };
+  const decrementHandlerByFive = () => {
+    dispatch(uiActions.decrementByAmount(5));
   };
   const toggleCounter = () => {};
 
   return (
     <main>
       <h1>Redux Counter</h1>
-      {/* <div>{counter}</div> */}
+      <div>{countQuantity}</div>
       <div>
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={decrementHandler}>Decrement</button>
+        <button onClick={IncrementHandlerByFive}>Increment</button>
+        <button onClick={decrementHandlerByFive}>Decrement</button>
       </div>
       <button onClick={toggleCounter}>counter</button>
     </main>

@@ -2,12 +2,12 @@ import React from "react";
 import {
   useTheme,
   useMediaQuery,
-  makeStyles,
   Toolbar,
   AppBar,
   CssBaseline,
   Typography,
 } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 

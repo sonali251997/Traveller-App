@@ -5,11 +5,10 @@ import {
   List,
   ListItem,
   ListItemText,
-  
 } from "@mui/material";
-import makeStyles from "@mui/material/styles";
+import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 const useStyle = makeStyles(() => ({
   link: {
