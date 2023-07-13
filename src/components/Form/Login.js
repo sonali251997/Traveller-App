@@ -26,7 +26,7 @@ const Login = () => {
           values.email === loggedUser.email &&
           values.password === loggedUser.password
         ) {
-          navigate("UI/Home");
+          navigate("/home");
         } else {
           alert("wrong email password");
         }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { uiActions } from "../store/counter-slice";
+import { uiActions } from "../../components/store/counter-slice";
+import Nav from '../../components/UI/Navbar'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <main>
+      <Nav/>
       <h1>Redux Counter</h1>
       <div>{countQuantity}</div>
       <div>
