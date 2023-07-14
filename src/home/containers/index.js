@@ -6,6 +6,7 @@ import Nav from "../../components/UI/Navbar";
 import "./index.css";
 import { Typography } from "@mui/material";
 import Categories from "../components/Categories";
+import Deals from "../components/Deals";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const Home = () => {
         <h1 className="heading">TRAVEL HUB</h1>
       </main>
       <Categories/>
+      <Deals/>
     </header>
   );
 };

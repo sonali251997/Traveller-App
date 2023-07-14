@@ -4,11 +4,16 @@ import {
   Typography,
   Tab,
   Tabs,
+  Rating,
   Card,
   Grid,
   CardMedia,
 } from "@mui/material";
 import React from "react";
+import img1 from "../../assets/img1.jpg";
+import img2 from "../../assets/img2.jpg";
+import img3 from "../../assets/img3.jpg";
+import img4 from "../../assets/img4.jpg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,9 +67,9 @@ const Categories = () => {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label="Item One" {...a11yProps(0)} />
-              <Tab label="Item Two" {...a11yProps(1)} />
-              <Tab label="Item Three" {...a11yProps(2)} />
+              <Tab label="Hotels" {...a11yProps(0)} />
+              <Tab label="Flights" {...a11yProps(1)} />
+              <Tab label="Booking" {...a11yProps(2)} />
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
@@ -73,11 +78,12 @@ const Categories = () => {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={img1}
                     title="green iguana"
                   />
                 </Card>
                 <Box sx={{ mt: 4 }}>
+                  <Rating name="size-small" defaultValue={4} size="small" />
                   <Typography gutterBottom variant="h5" component="div">
                     Rose Hotel
                   </Typography>
@@ -91,11 +97,12 @@ const Categories = () => {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={img2}
                     title="green iguana"
                   />
                 </Card>
                 <Box sx={{ mt: 4 }}>
+                  <Rating name="size-small" defaultValue={4} size="small" />
                   <Typography gutterBottom variant="h5" component="div">
                     Rose Hotel
                   </Typography>
@@ -109,11 +116,12 @@ const Categories = () => {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={img3}
                     title="green iguana"
                   />
                 </Card>
                 <Box sx={{ mt: 4 }}>
+                  <Rating name="size-small" defaultValue={4} size="small" />
                   <Typography gutterBottom variant="h5" component="div">
                     Rose Hotel
                   </Typography>
@@ -127,11 +135,12 @@ const Categories = () => {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={img4}
                     title="green iguana"
                   />
                 </Card>
                 <Box sx={{ mt: 4 }}>
+                  <Rating name="size-small" defaultValue={4} size="small" />
                   <Typography gutterBottom variant="h5" component="div">
                     Rose Hotel
                   </Typography>

@@ -1,7 +1,6 @@
 .showcase {
-    background: url(../../assets/maldives-1993704_1280.jpg) no-repeat center center/cover;
+    background: url(../../assets/showcase.jpg) no-repeat center center/cover;
     height: 80vh;
-    /* opacity: 0.8; */
 }
 
 .text {
@@ -14,6 +13,45 @@
 
 .heading {
     text-align: center;
-    color: white;
     font-size: 100px;
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+}
+
+.abc {
+    position: relative;
+}
+
+.abc:before {
+    height: 200px;
+    width: 100%;
+    content: "Background";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 40px;
+    background-color: #ddd;
+    text-align: center;
+    font-size: 150px;
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+    z-index: -2;
+    text-transform: uppercase;
+}
+
+.bgtext {
+    position: relative;
+}
+
+.bgtext:after {
+
+    margin: 3rem;
+    content: "";
+    position: absolute;
+    /* transform: rotate(300deg);
+    -webkit-transform: rotate(300deg); */
+    color: rgb(187, 182, 182);
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
