@@ -1,0 +1,19 @@
+.showcase {
+    background: url(../../assets/maldives-1993704_1280.jpg) no-repeat center center/cover;
+    height: 80vh;
+    /* opacity: 0.8; */
+}
+
+.text {
+    fill: none;
+    text-align: center;
+    color: white;
+    font-size: 47px;
+    -webkit-text-stroke: 3px white;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    font-size: 100px;
+}
